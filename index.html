@@ -1,152 +1,183 @@
 <html>
-  <head><title>DV Adventure Riddle Answers</title>
+
+<head>
+    <title>DV Adventure Riddle Answers</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="style.css">
     <style>
-
-      #app {
-        max-width:800px;
-        margin: 0 auto;
-      }
-      #filter-bar {
-        height:35px;
-        width:100%;
-        display:flex;
-        position:fixed;
-        top:0;
-        max-width:800px;
-        padding: 5px;
-        box-sizing: border-box;
-        background: var(--main-bg-color);
-        z-index: 1;
-      }
-      #filter-bar input {
-        flex-grow:1;
-        border-radius:10px;
-        margin-right:10px;
-        border: 0px;
-        padding: 10px;
-        font-size: 20px;
-      }
-      #filter-bar input:focus,#filter-bar select:focus {
-        outline:0;
-        border: 1px solid lightblue;
-      }
-      #loc {
-
-        font-size: 20px;
-        border:none;
-        background: var(--content-bg-color);
-        color:var(--text-color);
-      }
-      #loc option {
-        color:black;
-      }
-      #results {
-        margin-top: 30px;
-        padding:15px;
-        background: var(--content-bg-color)
-      }
-
-      .result {
-        display:flex;
-        margin: 2px 0;
-        padding: 2px 0;
-        align-items: center;
-        position:relative;
-        min-height: 3em;
-      }
-      .riddle {
-        flex-grow: 1;
-      }
-      .location {
-        width:50px;
-        flex-grow:0;
-        flex-shrink:0;
-        text-align:center;
-      }
-      .tnc {
-        background:#ffd999;
-      }
-      .cmp {
-        background:#73e9e0;
-      }
-      .hnr {
-        background:#ffc0ac;
-      }
-      .crm {
-        background:#bde190;
-      }
-      .answer {
-        position: relative;
-      }
-      .answer img:hover+.hint {
-        display: block;
-      }
-      .hint {
-        display: none;
-        position: absolute;
-        right: 100%;
-        background: white;
-        font-size: .8em;
-        padding: 5px;
-        top: 0;
-        margin-right: 5px;
-        z-index:2;
-      }
-      .has_hint {
-        border-radius: 50%;
-        box-shadow: 0px 0px 5px 2px rgba(255,255,255,.7);
-      }
-      .wrong {
-        position:absolute;
-        bottom:3px;
-        right:3px;
-      }
-      .wrong a {
-        text-decoration: none;
-        font-size: .8em;
-      }
-      .tnc .wrong a{
-        color: #c59f5f;
-      }
-      .cmp .wrong a {
-        color: #31b2a8
-      }
-      .crm .wrong a {
-        color: #87ac59
-      }
-      .hnr .wrong a {
-        color: #c9826c;
-      }
-
-      @media screen and (max-width: 800px) {
         #app {
-          max-width: none;
+            max-width: 800px;
+            margin: 0 auto;
         }
+        
         #filter-bar {
-          max-width: none;
-          padding:0;
-          margin:0;
+            /* height: 35px; */
+            width: 100%;
+            display: flex;
+            /* position: fixed;
+            top: 12px; */
+            max-width: 800px;
+            margin: 12px 0;
+            box-sizing: border-box;
+            z-index: 1;
         }
+        
         #filter-bar input {
-          margin-right:0;
-          border-radius:0px;
+            flex-grow: 1;
+            border-radius: 10px;
+            margin-right: 10px;
+            border: 0px;
+            padding: 10px;
+            font-size: 20px;
         }
+        
+        #filter-bar input:focus,
+        #filter-bar select:focus {
+            outline: 0;
+            border: 1px solid lightblue;
+        }
+        
+        #loc {
+            font-size: 20px;
+            border: none;
+            background: var(--content-bg-color);
+            color: var(--text-color);
+            border-radius: 10px;
+            padding: 0 0 0 6px;
+        }
+        
+        #loc option {
+            color: black;
+        }
+        
         #results {
-          margin-top: 30px;
-          padding:0px;
+            margin-top: 12px;
+            padding: 16px;
+            background: var(--content-bg-color);
+            border-radius: 12px;
         }
-      }
+        
+        .result {
+            display: flex;
+            margin: 2px 0;
+            padding: 12px;
+            align-items: center;
+            position: relative;
+            min-height: 3em;
+        }
+        
+        #results div.result:nth-last-child(2) {
+            border: 1px solid var(--main-bg-color);
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+        
+        .riddle {
+            flex-grow: 1;
+        }
+        
+        .location {
+            width: 50px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            text-align: center;
+        }
+        
+        .tnc {
+            background: #ffd999;
+        }
+        
+        .cmp {
+            background: #73e9e0;
+        }
+        
+        .hnr {
+            background: #ffc0ac;
+        }
+        
+        .crm {
+            background: #bde190;
+        }
+        
+        .answer {
+            position: relative;
+        }
+        
+        .answer img:hover+.hint {
+            display: block;
+        }
+        
+        .hint {
+            display: none;
+            position: absolute;
+            right: 100%;
+            background: white;
+            font-size: .8em;
+            padding: 5px;
+            top: 0;
+            margin-right: 5px;
+            z-index: 2;
+        }
+        
+        .has_hint {
+            border-radius: 50%;
+            box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, .7);
+        }
+        
+        .wrong {
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+        }
+        
+        .wrong a {
+            text-decoration: none;
+            font-size: .8em;
+        }
+        
+        .tnc .wrong a {
+            color: #c59f5f;
+        }
+        
+        .cmp .wrong a {
+            color: #31b2a8
+        }
+        
+        .crm .wrong a {
+            color: #87ac59
+        }
+        
+        .hnr .wrong a {
+            color: #c9826c;
+        }
+        
+        @media screen and (max-width: 800px) {
+            #app {
+                max-width: none;
+            }
+            #filter-bar {
+                max-width: none;
+                padding: 0;
+                margin: 0;
+            }
+            #filter-bar input {
+                margin-right: 0;
+                border-radius: 0px;
+            }
+            #results {
+                margin-top: 30px;
+                padding: 0px;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="app">
-      <div id="filter-bar">
-        <input v-model="filter" ref="filter" placeholder="Search riddle or select town">
-        <select v-model="search_location" id="loc"
-          @change="saveLocation()">
+        <div id="filter-bar">
+            <input v-model="filter" ref="filter" placeholder="Search riddle or select town">
+            <select v-model="search_location" id="loc" @change="saveLocation()">
           <option value="0" disabled>Select town</option>
           <option value="LH">Louise Hill</option>
           <option value="3F">3's Forest</option>
@@ -155,30 +186,25 @@
           <option value="VR">Vaer Reef</option>
           <option value="">All towns</option>
         </select>
-      </div>
-      <div id="results">
+        </div>
+        <div id="results">
 
-          <Riddle
-            v-for="(riddle, index) in riddles"
-            :key="index"
-            :riddle="riddle"
-            :filter="fiterLower"
-            :search_location="search_location"
-            :show="riddle.Location == search_location">
-          </Riddle>
+            <Riddle v-for="(riddle, index) in riddles" :key="index" :riddle="riddle" :filter="fiterLower" :search_location="search_location" :show="riddle.Location == search_location">
+            </Riddle>
 
-          <div class="result"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdNdlDhHnAeoLxxJlYj19fmAIjlCisiooZp4Y3eoNZQgYKkRQ/viewform">
+            <div class="result"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdNdlDhHnAeoLxxJlYj19fmAIjlCisiooZp4Y3eoNZQgYKkRQ/viewform">
           Can't find the right riddle? Please submit it here!</a></div>
-          <div>
-            <spe>Dotted underline</spe> means that word only appears in riddles of a single stat, for that specific town. For example, "wait" only appears in Tenacity riddles in Aviar Cove.<br>
-            Check the <a href="word_map.html">word map</a> for a condensed list of these words!
-          </div>
+            <div>
+                <spe>Dotted underline</spe> means that word only appears in riddles of a single stat, for that specific town. For example, "wait" only appears in Tenacity riddles in Aviar Cove.<br> Check the <a href="word_map.html">word map</a> for a condensed
+                list of these words!
+            </div>
 
-      </div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="app.js?v=0025"></script>
-  </body>
+</body>
+
 </html>
